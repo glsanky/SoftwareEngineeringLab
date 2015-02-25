@@ -1,0 +1,30 @@
+package palindrome;
+
+import java.util.*;
+
+public class Palindrome {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner in=new Scanner(System.in);
+		ArrayList list=new ArrayList();
+		System.out.println("Enter a number: ");
+		int num=in.nextInt();
+		int copy=num;
+		while(copy!=0)
+		{
+			list.add(Integer.toString(copy%10));
+			copy/=10;
+		}
+		Iterator itr=list.iterator();
+		String rev="";
+		while(itr.hasNext())
+			rev+=itr.next();
+		if(Integer.parseInt(rev)==num)
+			System.out.println("Yes");
+		else
+			System.out.println("No");
+	}
+
+}
+
